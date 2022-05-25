@@ -6,12 +6,13 @@
 
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?logo=express&logoColor=%2361DAFB&style=plastic)
 ![Node.js ](https://img.shields.io/badge/node.js-6DA55F?logo=node.js&logoColor=white&style=plastic)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
 ## Aplicação ExpressJS para CRUD em RAM.
 
 Este é o primeiro projeto do módulo três do curso de Desenvolvimento Full Stack da Blue Edtech.
 
-Para esta aplicação foi desenvolvida uma API que encaminha para as rotas /todos, /:id, /novo, /mudar/:id e /del/:id usando EXPRESS e NODEJS.
+Para esta aplicação foi desenvolvida uma API que encaminha para as rotas /todos, /:id, /novo, /mudar/:id e /del/:id usando EXPRESS, NODEJS e MongoDB.
 
 ### Observando os seguintes critérios:
 
