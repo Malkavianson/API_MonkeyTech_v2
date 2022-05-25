@@ -1,0 +1,216 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API MonkeyTech",
+    "description": "API para CRUD de produtos eletrônicos",
+    "termsOfService": "",
+    "contact": {
+      "email": "alexneto.best@gmail.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/produtos",
+      "description": "API de teste"
+    },
+    {
+      "url": "https://monkeytech.herokuapp.com/produtos",
+      "description": "API de produção"
+    }
+  ],
+  "paths": {
+    "/todos": {
+      "get": {
+        "summary": "Lista de todos os Produtos",
+        "description": "Rota responsável por listar todos os produtos",
+        "tags": ["Produtos"],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schemas": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#components/schemas/Produtos"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{id}": {
+      "get": {
+        "summary": "Busca um produto por ID",
+        "description": "Rota responsável por buscar um produto por ID",
+        "tags": ["Produtos"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do produto para a busca",
+            "required": true
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schemas": {
+                  "type": "array",
+                  "$ref": "#components/schemas/Produtos"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/novo": {
+      "post": {
+        "summary": "Cadastrar um produto",
+        "description": "Rota responsável por cadastrar um produto",
+        "tags": ["Produtos"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Produtos"
+              },
+              "examples": {
+                "Produtos": {
+                  "value": {
+                    "produto": "Novo Google Nest Audio",
+                    "descricao": "Google Nest Audio com assistente virtual Google Assistente. O Google Nest vem com o Google Assistente integrado.",
+                    "foto": "./assets/images/NEST.webp",
+                    "preco": 1249
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Produtos"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mudar/{id}": {
+      "put": {
+        "summary": "Editar um produto pelo ID",
+        "description": "Rota responsável por editar um produto pelo ID",
+        "tags": ["Produtos"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do produto para a busca",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Produtos"
+              },
+              "examples": {
+                "Produtos": {
+                  "value": {
+                    "produto": "Google Nest Audio Modificado",
+                    "descricao": "Google Nest Audio com assistente virtual Google Assistente. O Google Nest vem com o Google Assistente integrado.",
+                    "foto": "./assets/images/NEST.webp",
+                    "preco": 1249
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Produtos"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/del/{id}": {
+      "delete": {
+        "summary": "Apagar um produto pelo ID",
+        "description": "Rota responsável por apagar um produto pelo ID",
+        "tags": ["Produtos"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do produto para deleção",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Produtos": {
+        "type": "object",
+        "properties": {
+          "produto": {
+            "type": "string"
+          },
+          "descricao": {
+            "type": "string"
+          },
+          "foto": {
+            "type": "string"
+          },
+          "preco": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
