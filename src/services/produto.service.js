@@ -12,7 +12,7 @@ class ProdutoServices {
     return produtos;
   }
 
-  async listarProdutosPorID({id}) {
+  async listarProdutosPorID({ id }) {
     const produtoSelecionado = await Produtos.findById(id).exec();
     return produtoSelecionado;
   }
@@ -24,8 +24,12 @@ class ProdutoServices {
       foto,
       preco,
     };
-    const p = await Produtos.create(novoProduto);
-    return p;
+    try {
+      const p = await Produtos.create(novoProduto);
+      return p;
+    } catch (err) {
+      throw err;
+    }
   }
 
   async atualizarProduto({ produto, descricao, foto, preco, id }) {
@@ -35,14 +39,22 @@ class ProdutoServices {
       foto,
       preco,
     };
-    await Produtos.updateOne({ _id: id }, produtoAtualizado);
-    const p = await Produtos.findById(id);
-    return p;
+    try {
+      await Produtos.updateOne({ _id: id }, produtoAtualizado);
+      const p = await Produtos.findById(id);
+      return p;
+    } catch (err) {
+      throw err;
+    }
   }
 
   async excluirProduto({ id }) {
-    const p = await Produtos.findByIdAndDelete(id);
-    return p;
+try {
+  const p = await Produtos.findByIdAndDelete(id);
+  return p;
+} catch (err) {
+  throw err;
+}
   }
 }
 

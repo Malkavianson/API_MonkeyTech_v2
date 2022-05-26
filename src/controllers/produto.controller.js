@@ -12,7 +12,7 @@ class ProdutoControllers {
 
   async listarProdutosPorID(req, res) {
     const id = req.params.id;
-    const produto = await produtoServices.listarProdutosPorID({id});
+    const produto = await produtoServices.listarProdutosPorID({ id });
     res.send(produto);
   }
 
@@ -28,27 +28,35 @@ class ProdutoControllers {
       });
       res.status(201).send(novoProduto);
     } catch (err) {
-      res.send(err.message);
+      res.status(409).send(err.message);
     }
   }
 
   async atualizarProduto(req, res) {
     const { produto, descricao, foto, preco } = req.body;
     const id = req.params.id;
-    const produtoAtualizado = await produtoServices.atualizarProduto({
-      produto,
-      descricao,
-      preco,
-      foto,
-      id,
-    });
-    res.send(produtoAtualizado);
+    try {
+      const produtoAtualizado = await produtoServices.atualizarProduto({
+        produto,
+        descricao,
+        preco,
+        foto,
+        id,
+      });
+      res.send(produtoAtualizado);
+    } catch (err) {
+      response.status(409).send(err.message);
+    }
   }
 
   async excluirProduto(req, res) {
     const id = req.params.id;
-    const produto = await produtoServices.excluirProduto({ id });
-    res.status(200).send(produto);
+    try {
+      const produto = await produtoServices.excluirProduto({ id });
+      res.status(200).send(produto);      
+    } catch (err) {
+      response.status(404).send(err.message);      
+    }
   }
 }
 export default ProdutoControllers;
