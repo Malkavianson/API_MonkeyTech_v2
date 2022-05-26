@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const { connect } = mongoose;
 
 export const conectarAoDatabase = () => {
-  connect('mongodb://localhost:27017/produtos', {
+  connect('mongodb+srv://malkavianson:sad@produtos.ihvk6cf.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -14,3 +14,5 @@ export const conectarAoDatabase = () => {
       console.log(`Erro na conexão com o Mongodb: ${err}`);
     });
 };
+
+
