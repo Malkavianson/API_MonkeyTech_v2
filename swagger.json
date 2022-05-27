@@ -92,7 +92,7 @@
                   "value": {
                     "produto": "Novo Google Nest Audio",
                     "descricao": "Google Nest Audio com assistente virtual Google Assistente. O Google Nest vem com o Google Assistente integrado.",
-                    "foto": "./assets/images/NEST.webp",
+                    "foto": "./assets/images/NEST.png",
                     "preco": 1249
                   }
                 }
@@ -142,7 +142,7 @@
                   "value": {
                     "produto": "Google Nest Audio Modificado",
                     "descricao": "Google Nest Audio com assistente virtual Google Assistente. O Google Nest vem com o Google Assistente integrado.",
-                    "foto": "./assets/images/NEST.webp",
+                    "foto": "./assets/images/NEST.png",
                     "preco": 1249
                   }
                 }
