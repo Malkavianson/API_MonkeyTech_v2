@@ -3,63 +3,63 @@
       "produto": "EZ - Black",
       "descricao":
         "O dispositivo EZ é em forma de cubo com design moderno. O sistema EZ conecta-se sem fio a todos os sistemas e sensores da casa. Tem uma fonte de alimentação interna que lhe permitirá trabalhar continuamente durante 5 dias em caso de falha de alimentação externa.",
-      "foto": "./assets/images/ez001.webp",
+      "foto": "./assets/images/ez001.png",
       "preco": 3598
     },
     {
       "produto": "EZ - Wood",
       "descricao":
         "O dispositivo EZ é em forma de cubo com design moderno. O sistema EZ conecta-se sem fio a todos os sistemas e sensores da casa. Tem uma fonte de alimentação interna que lhe permitirá trabalhar continuamente durante 5 dias em caso de falha de alimentação externa.",
-      "foto": "./assets/images/ez002.webp",
+      "foto": "./assets/images/ez002.png",
       "preco": 3798
     },
     {
       "produto": "EZ - Yellow",
       "descricao":
         "O dispositivo EZ é em forma de cubo com design moderno. O sistema EZ conecta-se sem fio a todos os sistemas e sensores da casa. Tem uma fonte de alimentação interna que lhe permitirá trabalhar continuamente durante 5 dias em caso de falha de alimentação externa.",
-      "foto": "./assets/images/ez003.webp",
+      "foto": "./assets/images/ez003.png",
       "preco": 3498
     },
     {
       "produto": "EZ - Acqua",
       "descricao":
         "O dispositivo EZ é em forma de cubo com design moderno. O sistema EZ conecta-se sem fio a todos os sistemas e sensores da casa. Tem uma fonte de alimentação interna que lhe permitirá trabalhar continuamente durante 5 dias em caso de falha de alimentação externa.",
-      "foto": "./assets/images/ez004.webp",
+      "foto": "./assets/images/ez004.png",
       "preco": 3498
     },
     {
       "produto": "Echo-Dot - White",
       "descricao":
         "Amazon Echo Dot 4th Gen com assistente virtual Alexa glacier white 110V/240V. Controlado por voz com a Alexa, ele é perfeito para qualquer ambiente. Você pode pedir músicas, notícias, informações e muito mais.",
-      "foto": "./assets/images/eco_dot_1.jpg",
+      "foto": "./assets/images/eco_dot_1.png",
       "preco": 680
     },
     {
       "produto": "Echo-Dot - Black",
       "descricao":
         "Amazon Echo Dot 4th Gen com assistente virtual Alexa glacier black 110V/240V. Controlado por voz com a Alexa, ele é perfeito para qualquer ambiente. Você pode pedir músicas, notícias, informações e muito mais.",
-      "foto": "./assets/images/eco_dot_2.jpg",
+      "foto": "./assets/images/eco_dot_2.png",
       "preco": 680
     },
     {
       "produto": "Echo-Dot - Cyan",
       "descricao":
         "Amazon Echo Dot 4th Gen com assistente virtual Alexa glacier cyan 110V/240V. Controlado por voz com a Alexa, ele é perfeito para qualquer ambiente. Você pode pedir músicas, notícias, informações e muito mais.",
-      "foto": "./assets/images/eco_dot_3.jpg",
+      "foto": "./assets/images/eco_dot_3.png",
       "preco": 680
     },
     {
       "produto": "Google Nest Audio",
       "descricao":
         "Google Nest Audio com assistente virtual Google Assistente. O Google Nest vem com o Google Assistente integrado. Para começar, basta dizer ?Ok google? Ou hey google que o aparelho busca as respostas sobre o que lhe foi perguntado ou executa uma tarefa solicitada.",
-      "foto": "./assets/images/NEST.webp",
+      "foto": "./assets/images/NEST.png",
       "preco": 1249
     },
     {
       "produto": "Nest mini",
       "descricao":
         "Nest Mini (2ª Geração): Smart Speaker Com Google Assistente. O Google Nest mini vem com o Google Assistente integrado. Para começar, basta dizer ?Ok google? Ou hey google que o aparelho busca as respostas sobre o que lhe foi perguntado ou executa uma tarefa solicitada.",
-      "foto": "./assets/images/NESTmini.webp",
+      "foto": "./assets/images/NESTmini.png",
       "preco": 499
     }
   ]
