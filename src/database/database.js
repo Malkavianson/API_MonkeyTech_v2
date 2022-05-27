@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const { connect } = mongoose;
 
 export const conectarAoDatabase = () => {
-  connect('mongodb+srv://malkavianson:sad@produtos.ihvk6cf.mongodb.net/?retryWrites=true&w=majority', {
+  connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/produtos', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
