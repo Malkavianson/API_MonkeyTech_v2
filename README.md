@@ -8,7 +8,7 @@
 ![Node.js ](https://img.shields.io/badge/node.js-6DA55F?logo=node.js&logoColor=white&style=plastic)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white&style=plastic)
 
-## Aplicação Backend CRUD MongoDB + Front Vanilla (Create, Update, Delete)Critérios de Avaliação
+## Aplicação Backend CRUD MongoDB + Front Vanilla (Create, Update, Delete)
 
 Este é o segundo projeto do módulo três do curso de Desenvolvimento Full Stack da Blue Edtech.
 
