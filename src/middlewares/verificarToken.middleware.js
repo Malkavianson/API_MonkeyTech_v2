@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken';
 
 const verificarTokenMiddleware = (req, res, next) => {
-  console.log(req.headers)
   const token = req.headers.authorization;
   if (token === undefined) {
     return res.status(401).send('Token não enviado');

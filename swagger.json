@@ -292,9 +292,11 @@
     "/usuarios/mudar/{id}": {
       "put": {
         "summary": "Editar um usuario pelo ID",
-        "security": {
-          "token": []
-        },
+        "security": [
+          {
+            "token": []
+          }
+        ],
         "description": "Rota responsável por editar um usuario pelo ID",
         "tags": ["Usuarios"],
         "parameters": [
@@ -346,6 +348,11 @@
       "delete": {
         "summary": "Apagar um usuario pelo ID",
         "description": "Rota responsável por apagar um usuario pelo ID",
+        "security": [
+          {
+            "token": []
+          }
+        ],
         "tags": ["Usuarios"],
         "parameters": [
           {
@@ -448,8 +455,9 @@
     },
     "securitySchemes": {
       "token": {
-        "type": "http",
-        "scheme": "Bearer"
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization"
       }
     }
   }

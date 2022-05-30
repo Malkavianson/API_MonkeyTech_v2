@@ -27,10 +27,11 @@ class UsuariosServices {
     }
 
     async atualizarUsuario({ id, email, nome, senha, adm }) {
+        const senhaCriptografada = await bcryptjs.hash(senha, 8);
         const usuarioAtualizado = {
             email,
             nome,
-            senha,
+            senha: senhaCriptografada,
             adm,
         };
         try {
