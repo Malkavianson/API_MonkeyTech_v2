@@ -11,16 +11,16 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000/produtos",
+      "url": "http://localhost:3000",
       "description": "API de teste"
     },
     {
-      "url": "https://monkeytechv2.herokuapp.com/produtos",
+      "url": "https://monkeytechv2.herokuapp.com",
       "description": "API de produção"
     }
   ],
   "paths": {
-    "/todos": {
+    "/produtos/todos": {
       "get": {
         "summary": "Lista de todos os Produtos",
         "description": "Rota responsável por listar todos os produtos",
@@ -45,7 +45,7 @@
         }
       }
     },
-    "/{id}": {
+    "/produtos/{id}": {
       "get": {
         "summary": "Busca um produto por ID",
         "description": "Rota responsável por buscar um produto por ID",
@@ -76,7 +76,7 @@
         }
       }
     },
-    "/novo": {
+    "/produtos/novo": {
       "post": {
         "summary": "Cadastrar um produto",
         "description": "Rota responsável por cadastrar um produto",
@@ -118,7 +118,7 @@
         }
       }
     },
-    "/mudar/{id}": {
+    "/produtos/mudar/{id}": {
       "put": {
         "summary": "Editar um produto pelo ID",
         "description": "Rota responsável por editar um produto pelo ID",
@@ -168,7 +168,7 @@
         }
       }
     },
-    "/del/{id}": {
+    "/produtos/del/{id}": {
       "delete": {
         "summary": "Apagar um produto pelo ID",
         "description": "Rota responsável por apagar um produto pelo ID",
@@ -181,6 +181,212 @@
             "required": true
           }
         ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/usuarios": {
+      "get": {
+        "summary": "Lista de todos os Usuários",
+        "description": "Rota responsável por listar todos os usuários",
+        "tags": ["Usuarios"],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schemas": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#components/schemas/Usuarios"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usuarios/{id}": {
+      "get": {
+        "summary": "Busca um usuário por ID",
+        "description": "Rota responsável por buscar um usuário por ID",
+        "tags": ["Usuarios"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do usuario para a busca",
+            "required": true
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schemas": {
+                  "type": "array",
+                  "$ref": "#components/schemas/Usuarios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usuarios/novo": {
+      "post": {
+        "summary": "Cadastrar um usuario",
+        "description": "Rota responsável por cadastrar um usuario",
+        "tags": ["Usuarios"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuarios"
+              },
+              "examples": {
+                "Usuarios": {
+                  "value": {
+                    "email": "randomail@randomail.com",
+                    "nome": "Random Silva",
+                    "senha": "123456",
+                    "adm": false
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Usuarios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usuarios/mudar/{id}": {
+      "put": {
+        "summary": "Editar um usuario pelo ID",
+        "security": {
+          "token": []
+        },
+        "description": "Rota responsável por editar um usuario pelo ID",
+        "tags": ["Usuarios"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do usuario para a busca",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuarios"
+              },
+              "examples": {
+                "Usuarios": {
+                  "value": {
+                    "email": "randomail@randomail.com",
+                    "nome": "Random da Silva",
+                    "senha": "123456",
+                    "adm": false
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Usuarios"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usuarios/del/{id}": {
+      "delete": {
+        "summary": "Apagar um usuario pelo ID",
+        "description": "Rota responsável por apagar um usuario pelo ID",
+        "tags": ["Usuarios"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do usuario para deleção",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "summary": "Entrar na API com autenticação",
+        "description": "Rota responsável por permitir acesso do usuário",
+        "tags": ["Login"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              },
+              "examples": {
+                "Usuarios": {
+                  "value": {
+                    "email": "randomail@randomail.com",
+                    "senha": "123456"
+                  }
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "400": {
             "description": "Bad Request"
@@ -210,6 +416,40 @@
             "type": "number"
           }
         }
+      },
+      "Usuarios": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "senha": {
+            "type": "string"
+          },
+          "adm": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Login": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "senha": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "token": {
+        "type": "http",
+        "scheme": "Bearer"
       }
     }
   }

@@ -5,7 +5,7 @@ const produtoIdMiddleware = async (req, res, next) => {
   const id = req.params.id;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return response.status(400).send({ message: 'ID inválido!' });
+    return res.status(400).send({ message: 'ID inválido!' });
   }
 
   const produto = await Produto.findById(id);

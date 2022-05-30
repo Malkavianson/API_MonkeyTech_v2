@@ -45,7 +45,7 @@ class ProdutoControllers {
       });
       res.send(produtoAtualizado);
     } catch (err) {
-      response.status(409).send(err.message);
+      res.status(409).send(err.message);
     }
   }
 
@@ -55,7 +55,7 @@ class ProdutoControllers {
       const produto = await produtoServices.excluirProduto({ id });
       res.status(200).send(produto);      
     } catch (err) {
-      response.status(404).send(err.message);      
+      res.status(404).send(err.message);      
     }
   }
 }
