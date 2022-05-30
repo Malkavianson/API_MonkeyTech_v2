@@ -47,7 +47,7 @@ class UsuariosControllers {
   async excluirUsuario(req, res) {
     const id = req.params.id;
     await usuariosServices.excluirUsuario({ id });
-    res.sendStatus(204);
+    res.sendStatus(200);
   }
 }
 export default UsuariosControllers;
